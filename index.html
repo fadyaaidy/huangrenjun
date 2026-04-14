@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Huang Renjun</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+        background-color: #f1ff84;
+        margin: 0;
+        }
+        #header{ 
+            width: 100%;
+            background-color: #4caf6d; 
+            padding: 15px 0;
+            margin-bottom: 20px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ini supaya logo di kiri, search di kanan */
+        }
+        #header img{
+            margin-left: 20px; /* Jarak logo dari pinggir kiri */
+            margin-right: auto; /* supaya menu di sebelahnya punya jarak */    
+        }
+        #menu-utama {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            gap: 10px; /* Jarak antar tulisan Home, Renjun, Update */
+            margin-right: 250px; /* Jarak antara tulisan Update dengan kotak Search */
+        }
+        #menu-utama li a {
+            display: flex;
+            align-items: center;
+            height: 40px; /* samakan tinggi dengan input */
+        }
+
+        form {
+            margin-right: 20px; /* Jarak kotak search dari pinggir kanan */
+        }
+        form input {
+            height: 40px;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+        #banner-slider {
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        .artikel {
+            background-color: #4caf6d; /* Ganti kode ini, misal #f9f9f9 */
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px; /* Biar sudutnya gak terlalu tajam */
+        }
+        .slider-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slide {
+            min-width: 100%;
+            position: relative;
+        }
+        .slide img {
+            width: 100%;
+            height: 300px; 
+            object-fit: cover;
+            display: block;
+        }
+        .slide-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(38, 32, 32, 0.531);
+            color: #fff;
+            padding: 10px 16px;
+        }
+        .slide-caption h3 {
+            margin: 0 0 4px;
+            font-size: 16px;
+        }
+        .slide-caption p {
+            margin: 0;
+            font-size: 12px;
+            color: #ddd;
+        }
+        .slider-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(141, 140, 123, 0);
+            color: #fff68e;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .slider-btn.prev { left: 10px; }
+        .slider-btn.next { right: 10px; }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 52px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 10;
+        }
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            border: none;
+            padding: 0;
+        }
+        .dot.active {
+            background: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div id="wrapper">
+
+    <div id="header">
+        <img src="dream.png" alt="logo">
+
+        <ul id="menu-utama">
+            <li><a href="">Home</a></li>
+            <li><a href="">Renjun</a></li>
+            <li><a href="">Update</a></li>
+        </ul>
+
+        <form>
+            <input type="text" name="search" placeholder="Search...">
+        </form>
+    </div>
+
+    
+    <div id="banner-slider">
+        <div class="slider-track" id="sliderTrack">
+
+            <div class="slide">
+                <img src="imut5.jpg" alt="Huang Renjun from NCT Dream">
+                <div class="slide-caption">
+                    <h3>Huang Renjun (NCT Dream)</h3>
+                    <p>Lahir 23 Maret 2000 · Main Vocalist · SM Entertainment</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="njun.jpg" alt="Hot Sauce - NCT Dream">
+                <div class="slide-caption">
+                    <h3>NCT Dream — "Hot Sauce"</h3>
+                    <p>Album Studio Pertama (full album) · Rilis pada 10 Mei 2021 </p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <img src="sayangku.jpg"sku. alt="CORTIS - GO!">
+                <div class="slide-caption">
+                    <h3>How can he be this adorable?</h3>
+                    <p>Ganteng banget, lucu banget alafyu</p>
+                </div>
+            </div>
+
+        </div>
+
+        <button class="slider-btn prev" id="btnPrev">&#8249;</button>
+        <button class="slider-btn next" id="btnNext">&#8250;</button>
+        <div class="slider-dots" id="sliderDots"></div>
+    </div>
+
+    <div id="daftar-artikel">
+
+        <div class="artikel">
+            <img src="njunmerah.jpg" alt="CORTIS">
+            <h1>Renjun NCT Dream!</h1>
+            <b>23 Mar 2025</b><b>Views : 9,123,456</b>
+            <p>Huang Renjun, member NCT Dream di bawah SM Entertainment,
+                 dikenal sebagai main vocalist dengan suara lembut dan emosional yang khas</p>
+            <a href="">Read More</a>
+        </div>
+
+        <div class="artikel">
+            <img src="njunmic.jpg" alt="CORTIS Color Outside the Lines">
+            <h1>Suara Emas Renjun</h1>
+            <b>2025</b><b>Views : 5,987,120</b>
+            <p>Renjun mendapat banyak pujian atas kemampuan vokalnya dalam berbagai
+                 lagu NCT Dream, membuatnya dikenal sebagai salah satu vocalist terbaik
+                  generasinya.</p>
+            <a href="">Read More</a>
+        </div>
+
+        <div class="artikel">
+            <img src="njunmasker.jpg" alt="CORTIS Jakarta">
+            <h1>Renjun dan Aktivitasnya</h1>
+            <b>2024</b><b>Views : 3,487,497</b>
+            <p>Selain aktif sebagai vokalis dan penari utama, Renjun juga dikenal dengan julukan "Golden Hands"
+                 karena bakat seni seperti menjahit dan mendekorasi..</p>
+            <a href="">Read More</a>
+        </div>
+
+    </div>
+
+    <div id="sidebar">
+        <h2>Who are Renjun?</h2>
+        <p>Renjun (Huang Renjun) adalah idol asal Tiongkok yang tergabung dalam boy
+           group NCT, khususnya unit NCT Dream di bawah SM Entertainment. Ia dikena
+           sebagai main vocalist dengan suara yang lembut dan emosional. Renjun debut
+           pada tahun 2016 bersama NCT Dream dan memiliki banyak penggemar karena
+           kepribadiannya yang hangat, humoris, dan perhatian kepada member maupun fans. 
+           Selain bernyanyi, ia juga aktif dalam radio dan berbagai konten hiburan.</p>
+
+        <h2>Profile Renjun</h2>
+        <ul>
+            <li><a href="">Nama lengkap: Huang Renjun</a></li>
+            <li><a href="">Posisi: Main Vocalist</a></li>
+            <li><a href="">Tanggal lahir: 23 Maret 2000</a></li>
+            <li><a href="">Asal: Jilin, Tiongkok</a></li>
+            <li><a href="">Grup: NCT Dream</a></li>
+            <li><a href="">Agensi: SM Entertainment</a></li>
+        </ul>
+    </div>
+
+    <div id="footer">
+        <p>Renjun Lovers Site &copy; 2026 &mdash; Made with love </p>
+    </div>
+
+</div>
+
+<script>
+    (function () {
+        var track   = document.getElementById('sliderTrack');
+        var dotsEl  = document.getElementById('sliderDots');
+        var slides  = track.querySelectorAll('.slide');
+        var total   = slides.length;
+        var current = 0;
+        var timer;
+
+        slides.forEach(function (_, i) {
+            var d = document.createElement('button');
+            d.className = 'dot' + (i === 0 ? ' active' : '');
+            d.addEventListener('click', function () { goTo(i); resetTimer(); });
+            dotsEl.appendChild(d);
+        });
+
+        function updateDots() {
+            dotsEl.querySelectorAll('.dot').forEach(function (d, i) {
+                d.className = 'dot' + (i === current ? ' active' : '');
+            });
+        }
+
+        function goTo(index) {
+            current = (index + total) % total;
+            track.style.transform = 'translateX(-' + (current * 100) + '%)';
+            updateDots();
+        }
+
+        document.getElementById('btnNext').addEventListener('click', function () { goTo(current + 1); resetTimer(); });
+        document.getElementById('btnPrev').addEventListener('click', function () { goTo(current - 1); resetTimer(); });
+
+        function startTimer() { timer = setInterval(function(){ goTo(current + 1); }, 4000); }
+        function resetTimer() { clearInterval(timer); startTimer(); }
+
+        startTimer();
+    })();
+</script>
+
+</body>
+</html>
